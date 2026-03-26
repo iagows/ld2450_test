@@ -1,1 +1,1 @@
-# ld2450_test
+# Test project for LD2450 - Radar Sensor
