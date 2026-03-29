@@ -11,12 +11,7 @@ LD2450 ld2450;
 void setup()
 {
   Serial.begin(115200);
-  while (!Serial)
-    ;
-  radarSerial.begin(256000);
-
-  ld2450.begin(radarSerial);
-
+  ld2450.begin(radarSerial, false);
   Serial.println("Initialized LD2450 Radar Sensor");
 }
 
@@ -44,7 +39,6 @@ void loop()
   }
   else
   {
-    Serial.print(ld2450.getLastTargetMessage());
     static unsigned long lastMillis = 0;
     if (millis() - lastMillis > 2000)
     {
